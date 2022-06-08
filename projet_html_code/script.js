@@ -16,6 +16,23 @@ closeRules.addEventListener('click', event => {
 
    event.preventDefault();
    aside.style.opacity = "0"; 
+});
+
+//reste fond à assombrir et modifier taille de l'aside
+
+//**********************STEP-1******************* */
+
+steP1 = document.querySelector('.step-1');
+choix = document.querySelector('.option-container');
+
+steP1.addEventListener('click', event => {
+   event.preventDefault();
+   steP1.classList.add('spock ');
+   
+ 
+   
+   
 
 
 });
+console.log(steP1);
