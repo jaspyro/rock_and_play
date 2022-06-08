@@ -15,58 +15,64 @@ closeRules.addEventListener('click', event => {
 
    event.preventDefault();
    aside.style.opacity = "0"; 
-
-
 });
+
+//reste fond à assombrir et modifier taille de l'aside
+
+//**********************STEP-1******************* */
+
 
 section = document.querySelector('section');
 step_1 = document.querySelector('.step-1');
+step_2 = document.querySelector('.step-2');
+player_pick = document.querySelector('.player-pick');
+computer_pick = document.querySelector('.computer-pick');
+replace = document.querySelector('.replace');
 choix = document.querySelectorAll('.option-container');
+
 
 paper = document.querySelector('.paper');
 scissors = document.querySelector('.scissors');
 rock = document.querySelector('.rock');
 
-console.log(paper);
-console.log(rock);
-console.log(scissors);
+console.log(section);
+console.log(step_2);
 
-step_1.addEventListener('click', event => {
+function random() {
+   random = Math.floor(Math.random() * 3);
+   if (random == 0) {
+      computer_pick.appendChild(paper);
+   } else if (random == 1) {
+      computer_pick.appendChild(scissors);
+   }  else {
+      computer_pick.appendChild(rock);
+   }
+}
+
+paper.addEventListener('click', event => {
    event.preventDefault();
-   step_1.classList.add('.step-1-minimize');
+   step_1.classList.add('step-1-minimize');
+   step_2.classList.add('step-2-minimizer');
+   player_pick.appendChild(paper);
+   
+   random();
 })
 
-// item.addEventListener('click', event => {
-//     event.preventDefault();
-//     if ( item == 2 )  {
-//        console.log("paper");
-//     } else if ( choix == rock ) {
-//        console.log("rock")
-//     } else {
-//        console.log("scissors");
-//    }
-//  });
+scissors.addEventListener('click', event => {
+   event.preventDefault();
+   step_1.classList.add('step-1-minimize');
+   step_2.classList.add('step-2-minimizer');
+   player_pick.appendChild(scissors);
 
-// choix.forEach(index => {
-//       console.log(index);
-//       if ( choix.lenght == 0 ) {
-//          console.log("papper");
-//       } else if ( choix == rock ) {
-//          console.log("rock");
-//       } else if ( choix == scissors ) {
-//          console.log("scissors");
-//       } else {
-//          console.log("unknow");
-//       }
-// });
+   random();
+})
 
-// choix.('click', event => {
-//    event.preventDefault();
-//    if ( choix == paper )  {
-//       console.log("paper");
-//    } else if ( choix == rock ) {
-//       console.log("rock")
-//    } else {
-//       console.log("scissors");
-//    }
-// });
+rock.addEventListener('click', event => {
+   event.preventDefault();
+   step_1.classList.add('step-1-minimize');
+   step_2.classList.add('step-2-minimizer');
+   player_pick.appendChild(rock);
+
+   random();
+})
+
